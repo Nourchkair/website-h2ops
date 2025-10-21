@@ -1,0 +1,14 @@
+.scrollReveal {
+  margin: 20px 0;
+}
+
+.text {
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  line-height: 1.5;
+  font-weight: 600;
+  color: white; /* fits your dark section */
+}
+
+.word {
+  display: inline-block;
+}
