@@ -113,7 +113,7 @@ const WhyUs: React.FC = () => {
         bgImageSrc="/media/why-bg.jpg"
         title="Why H2Ops"
         date="Scroll to expand video"
-        scrollToExpand="Reveal what sets us apart"
+        scrollToExpand="Scroll to reveal our edge"
         textBlend
         contentRef={contentScrollerRef}
         onAfterExpand={() => ScrollTrigger.refresh()}
