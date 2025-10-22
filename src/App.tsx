@@ -1,6 +1,7 @@
 // src/App.tsx
 import "./styles/logoloop.css";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Footer } from "./components/layout/Footer";
 import Hero from "./components/sections/Hero";
@@ -18,6 +19,7 @@ import CtaNearMenu from "./components/layout/CtaNearMenu";
 import { ButtonColorful } from "@/components/ui/button-colorful";
 
 function App() {
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -30,22 +32,6 @@ function App() {
       link.rel = "stylesheet";
       document.head.appendChild(link);
     }
-  }, []);
-
-  // Wire all [data-booking] to the NEW calendar link
-  useEffect(() => {
-    const url = "https://calendar.app.google/gCXDtg5SBN9UE5RF6";
-    const els = document.querySelectorAll<HTMLElement>("[data-booking]");
-    els.forEach((el) => {
-      if (el.tagName.toLowerCase() === "a") {
-        const a = el as HTMLAnchorElement;
-        a.href = url;
-        a.target = "_blank";
-        a.rel = "noopener noreferrer";
-      } else {
-        el.onclick = () => window.open(url, "_blank", "noopener,noreferrer");
-      }
-    });
   }, []);
 
   const menuItems = [
@@ -74,14 +60,12 @@ function App() {
       {/* Mobile CTA: show ONLY when the menu is open, under the Close/Menu button */}
       {menuOpen && (
         <div className="sm:hidden fixed z-[96] right-4 top-16 pointer-events-auto">
-          <a
-            href="https://calendar.app.google/gCXDtg5SBN9UE5RF6"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => navigate('/contact')}
             className="block"
           >
-            <ButtonColorful label="Let’s talk" variant="blue" className="font-semibold" />
-          </a>
+            <ButtonColorful label="Let's talk" variant="blue" className="font-semibold" />
+          </button>
         </div>
       )}
 

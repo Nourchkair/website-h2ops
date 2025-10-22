@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SplineScene } from "../ui/splite";
 import { MagnetizeButton } from "@/components/ui/magnetize-button";
+import { useNavigate } from "react-router-dom";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -16,10 +17,11 @@ const fadeInUp = {
 };
 
 export function ExperienceAI() {
+  const navigate = useNavigate();
   const [showWidget, setShowWidget] = useState(false);
 
   const handleStartNow = () => {
-    window.open('https://calendar.app.google/R6XMd5ipbBTu3LXL8', '_blank', 'noopener,noreferrer');
+    navigate('/contact');
   };
 
   return (

@@ -3,6 +3,7 @@ import { Check, Shield } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { SectionTitle } from "../ui/SectionTitle";
 import { MagneticButton } from "../ui/MagneticButton";
+import { useNavigate } from "react-router-dom";
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -24,18 +25,8 @@ const scaleIn = {
   }
 };
 
-const scrollToId = (id) => {
-  const el = document.getElementById(id);
-  if (el) {
-    el.scrollIntoView({ 
-      behavior: 'smooth', 
-      block: 'start',
-      inline: 'nearest'
-    });
-  }
-};
-
 export function Pricing() {
+  const navigate = useNavigate();
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10%" });
 
@@ -177,7 +168,7 @@ export function Pricing() {
                   variant={plan.popular ? "primary" : "secondary"}
                   size="md"
                   className="w-full"
-                  onClick={() => scrollToId('contact')}
+                  onClick={() => navigate('/contact')}
                 >
                   {plan.cta}
                 </MagneticButton>

@@ -2,9 +2,12 @@
 
 import React from "react";
 import { ButtonColorful } from "@/components/ui/button-colorful";
+import { useNavigate } from "react-router-dom";
 
 /** Small nav CTA placed near the StaggeredMenu button */
 export default function CtaNearMenu() {
+  const navigate = useNavigate();
+
   return (
     <div
       className="
@@ -13,19 +16,17 @@ export default function CtaNearMenu() {
       "
     >
       <div className="pointer-events-auto">
-        <a
-          href="https://calendar.app.google/R6XMd5ipbBTu3LXL8"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => navigate('/contact')}
           className="hover:scale-[1.02] active:scale-[0.99] transition-transform touch-manipulation"
           style={{ minHeight: 44, minWidth: 44 }}
         >
           <ButtonColorful
-            label="Let’s talk"
+            label="Let's talk"
             variant="blue"
             className="text-xs sm:text-sm px-3 py-2 font-semibold"
           />
-        </a>
+        </button>
       </div>
     </div>
   );

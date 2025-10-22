@@ -46,7 +46,8 @@ createRoot(document.getElementById('root')!).render(
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/case/:slug" element={<CaseDetail />} /> {/* ← NEW */}
+        <Route path="/case/:slug" element={<CaseDetail />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   </StrictMode>

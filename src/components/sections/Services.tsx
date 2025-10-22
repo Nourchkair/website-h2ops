@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { ButtonColorful } from "@/components/ui/button-colorful";
+import { useNavigate } from "react-router-dom";
 
 type SubService = { name: string; bullets: string[] };
 
@@ -70,6 +71,7 @@ function FlipCardInPlace({
   onClose: () => void;
   className?: string;
 }) {
+  const navigate = useNavigate();
   const prefersReducedMotion = useReducedMotion();
   const [slide, setSlide] = useState(0);
   const [dir, setDir] = useState(0);
@@ -158,17 +160,17 @@ function FlipCardInPlace({
               </div>
 
               <div className="mt-auto mb-1 flex w-full items-center justify-center">
-                <a
-                  href="https://calendar.app.google/R6XMd5ipbBTu3LXL8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate('/contact');
+                  }}
                   className="hover:scale-[1.03] active:scale-[0.99] transition-transform"
                   style={{ minHeight: "44px", minWidth: "44px" }}
                   aria-label={ctaLabel(data.frontTitle)}
                 >
                   <ButtonColorful label={ctaLabel(data.frontTitle)} variant="blue" className="font-semibold text-sm sm:text-base px-6" />
-                </a>
+                </button>
               </div>
             </div>
           </div>
