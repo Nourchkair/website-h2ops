@@ -78,8 +78,8 @@ export default function Hero() {
             <span className="invisible block text-xl sm:text-2xl md:text-3xl font-semibold px-2">
               Brokerages
             </span>
-            {/* rotating, left-aligned word */}
-            <span className="absolute inset-y-0 left-0 flex items-center">
+            {/* rotating word - centered on mobile, left-aligned on desktop */}
+            <span className="absolute inset-y-0 left-1/2 -translate-x-1/2 sm:left-0 sm:translate-x-0 flex items-center">
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.span
                   key={idx}
