@@ -1,7 +1,6 @@
 // src/components/sections/Hero.jsx
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
 import { ButtonColorful } from "@/components/ui/button-colorful";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
@@ -38,7 +37,7 @@ export default function Hero() {
       {/* BACKGROUND ROBOT — interactive */}
       <div
         ref={wrapRef}
-        className="absolute inset-0 z-10 grid place-items-center"
+        className="absolute inset-0 z-10 grid place-items-center" // <— pointer events enabled
       >
         <div className="w-[92vw] max-w-[1200px] aspect-[16/10] sm:aspect-[16/9] cursor-grab active:cursor-grabbing">
           <SplineScene
@@ -52,6 +51,7 @@ export default function Hero() {
 
       {/* FOREGROUND CONTENT */}
       <div className="relative z-30 w-full max-w-4xl mx-auto text-center mt-[12vh] sm:mt-[14vh] lg:mt-[18vh]">
+
         {/* H1 */}
         <motion.h1
           className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-tight"
@@ -59,10 +59,11 @@ export default function Hero() {
           animate={{ opacity: ready ? 1 : 0, y: ready ? 0 : (prefersReducedMotion ? 0 : 8) }}
           transition={{ delay: DELAY + 0.1, duration: prefersReducedMotion ? 0.15 : 0.6, ease: "easeOut" }}
         >
-          Acquire. Convert. Deliver. <span className="opacity-90"> Automatically.</span>
+          Acquire. Convert. Deliver.{" "}
+          <span className="opacity-90"> Automatically.</span>
         </motion.h1>
 
-        {/* Subhead with rotating term (centered on mobile, left-aligned on md+) */}
+        {/* Subhead with rotating term (left-aligned within fixed width) */}
         <motion.p
           className="mt-3 sm:mt-4 text-base xs:text-lg sm:text-xl md:text-2xl text-white/85 leading-relaxed"
           initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 8 }}
@@ -71,12 +72,12 @@ export default function Hero() {
         >
           The AI growth partner for fast-moving{" "}
           <span className="relative inline-block align-baseline">
-            {/* invisible width calibrator (keeps layout stable) */}
+            {/* invisible width calibrator */}
             <span className="invisible block text-xl sm:text-2xl md:text-3xl font-semibold px-2">
               Brokerages
             </span>
-            {/* rotating word — centered on mobile, left-aligned on md+ */}
-            <span className="absolute inset-0 md:inset-y-0 md:left-0 flex items-center justify-center md:justify-start w-full">
+            {/* rotating, left-aligned word */}
+            <span className="absolute inset-y-0 left-0 flex items-center">
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.span
                   key={idx}
@@ -102,17 +103,19 @@ export default function Hero() {
           animate={{ opacity: ready ? 1 : 0, y: ready ? 0 : (prefersReducedMotion ? 0 : 16) }}
           transition={{ delay: DELAY + 0.6, duration: prefersReducedMotion ? 0.2 : 0.7, ease: "easeOut" }}
         >
-          <Link
-            to="/contact"
+          <a
+            href="https://calendar.app.google/R6XMd5ipbBTu3LXL8"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hover:scale-[1.03] active:scale-[0.99] transition-transform touch-manipulation"
             style={{ minHeight: "44px", minWidth: "44px" }}
           >
             <ButtonColorful
-              label="Let's talk"
+              label="Let’s talk"
               variant="blue"
               className="font-semibold text-sm sm:text-base px-6"
             />
-          </Link>
+          </a>
         </motion.div>
       </div>
     </section>

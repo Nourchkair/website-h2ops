@@ -1,25 +1,52 @@
 // src/App.tsx
 import "./styles/logoloop.css";
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import { Footer } from "./components/layout/Footer";
 import Hero from "./components/sections/Hero";
 import WhyUs from "./components/sections/WhyUs";
 import Services from "./components/sections/Services";
 import PoweredBy from "./components/sections/PoweredBy";
-import About from "./components/sections/About";
+import About from "./components/sections/About"; // (ok to remove if unused)
 import { Security } from "./components/sections/Security";
 import BackgroundAuroraParticles from "./components/layout/BackgroundAuroraParticles";
 import StaggeredMenu from "./components/staggered/StaggeredMenu";
 import RealOutcomes from "./components/sections/RealOutcomes";
 import CtaNearMenu from "./components/layout/CtaNearMenu";
-import ContactPage from "./pages/ContactPage";
 
+// ✅ Same button used in Hero (matches earlier usage)
 import { ButtonColorful } from "@/components/ui/button-colorful";
 
-function HomePage() {
+function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const id = "app-fonts-link";
+    if (!document.getElementById(id)) {
+      const link = document.createElement("link");
+      link.id = id;
+      link.href =
+        "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap";
+      link.rel = "stylesheet";
+      document.head.appendChild(link);
+    }
+  }, []);
+
+  // Wire all [data-booking] to the NEW calendar link
+  useEffect(() => {
+    const url = "https://calendar.app.google/gCXDtg5SBN9UE5RF6";
+    const els = document.querySelectorAll<HTMLElement>("[data-booking]");
+    els.forEach((el) => {
+      if (el.tagName.toLowerCase() === "a") {
+        const a = el as HTMLAnchorElement;
+        a.href = url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+      } else {
+        el.onclick = () => window.open(url, "_blank", "noopener,noreferrer");
+      }
+    });
+  }, []);
 
   const menuItems = [
     { label: "Home", ariaLabel: "Go to home", link: "#home" },
@@ -36,7 +63,7 @@ function HomePage() {
   ];
 
   return (
-    <div className="relative">
+    <>
       <BackgroundAuroraParticles />
 
       {/* Desktop CTA (unchanged) */}
@@ -47,12 +74,14 @@ function HomePage() {
       {/* Mobile CTA: show ONLY when the menu is open, under the Close/Menu button */}
       {menuOpen && (
         <div className="sm:hidden fixed z-[96] right-4 top-16 pointer-events-auto">
-          <Link
-            to="/contact"
+          <a
+            href="https://calendar.app.google/gCXDtg5SBN9UE5RF6"
+            target="_blank"
+            rel="noopener noreferrer"
             className="block"
           >
-            <ButtonColorful label="Let's talk" variant="blue" className="font-semibold" />
-          </Link>
+            <ButtonColorful label="Let’s talk" variant="blue" className="font-semibold" />
+          </a>
         </div>
       )}
 
@@ -116,30 +145,7 @@ function HomePage() {
 
         <Footer />
       </main>
-    </div>
-  );
-}
-
-function App() {
-  useEffect(() => {
-    const id = "app-fonts-link";
-    if (!document.getElementById(id)) {
-      const link = document.createElement("link");
-      link.id = id;
-      link.href =
-        "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap";
-      link.rel = "stylesheet";
-      document.head.appendChild(link);
-    }
-  }, []);
-
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 

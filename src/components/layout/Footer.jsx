@@ -1,6 +1,5 @@
 // src/components/layout/Footer.tsx
 import React from "react";
-import { Link } from "react-router-dom";
 import { ButtonColorful } from "@/components/ui/button-colorful";
 
 export function Footer() {
@@ -25,18 +24,20 @@ export function Footer() {
             </h2>
 
             <div className="mt-6">
-              <Link
-                to="/contact"
+              <a
+                href="https://calendar.app.google/R6XMd5ipbBTu3LXL8"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex hover:scale-[1.03] active:scale-[0.99] transition-transform touch-manipulation"
                 style={{ minHeight: "44px", minWidth: "44px" }}
                 aria-label="Let's talk"
               >
                 <ButtonColorful
-                  label="Let's talk"
+                  label="Let’s talk"
                   variant="blue"
                   className="font-semibold text-sm sm:text-base px-6"
                 />
-              </Link>
+              </a>
             </div>
           </div>
 

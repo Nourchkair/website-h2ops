@@ -5,7 +5,6 @@ import * as React from "react";
 import { useMemo, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { ButtonColorful } from "@/components/ui/button-colorful";
 
@@ -159,15 +158,17 @@ function FlipCardInPlace({
               </div>
 
               <div className="mt-auto mb-1 flex w-full items-center justify-center">
-                <Link
-                  to="/contact"
+                <a
+                  href="https://calendar.app.google/R6XMd5ipbBTu3LXL8"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
                   className="hover:scale-[1.03] active:scale-[0.99] transition-transform"
                   style={{ minHeight: "44px", minWidth: "44px" }}
                   aria-label={ctaLabel(data.frontTitle)}
                 >
                   <ButtonColorful label={ctaLabel(data.frontTitle)} variant="blue" className="font-semibold text-sm sm:text-base px-6" />
-                </Link>
+                </a>
               </div>
             </div>
           </div>
