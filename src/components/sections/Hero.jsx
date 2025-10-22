@@ -37,7 +37,7 @@ export default function Hero() {
       {/* BACKGROUND ROBOT — interactive */}
       <div
         ref={wrapRef}
-        className="absolute inset-0 z-10 grid place-items-center" // <— pointer events enabled
+        className="absolute inset-0 z-10 grid place-items-center"
       >
         <div className="w-[92vw] max-w-[1200px] aspect-[16/10] sm:aspect-[16/9] cursor-grab active:cursor-grabbing">
           <SplineScene
@@ -51,7 +51,6 @@ export default function Hero() {
 
       {/* FOREGROUND CONTENT */}
       <div className="relative z-30 w-full max-w-4xl mx-auto text-center mt-[12vh] sm:mt-[14vh] lg:mt-[18vh]">
-
         {/* H1 */}
         <motion.h1
           className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-tight"
@@ -59,11 +58,10 @@ export default function Hero() {
           animate={{ opacity: ready ? 1 : 0, y: ready ? 0 : (prefersReducedMotion ? 0 : 8) }}
           transition={{ delay: DELAY + 0.1, duration: prefersReducedMotion ? 0.15 : 0.6, ease: "easeOut" }}
         >
-          Acquire. Convert. Deliver.{" "}
-          <span className="opacity-90"> Automatically.</span>
+          Acquire. Convert. Deliver. <span className="opacity-90"> Automatically.</span>
         </motion.h1>
 
-        {/* Subhead with rotating term (left-aligned within fixed width) */}
+        {/* Subhead with rotating term (centered on mobile, left-aligned on md+) */}
         <motion.p
           className="mt-3 sm:mt-4 text-base xs:text-lg sm:text-xl md:text-2xl text-white/85 leading-relaxed"
           initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 8 }}
@@ -72,12 +70,12 @@ export default function Hero() {
         >
           The AI growth partner for fast-moving{" "}
           <span className="relative inline-block align-baseline">
-            {/* invisible width calibrator */}
+            {/* invisible width calibrator (keeps layout stable) */}
             <span className="invisible block text-xl sm:text-2xl md:text-3xl font-semibold px-2">
               Brokerages
             </span>
-            {/* rotating, left-aligned word */}
-            <span className="absolute inset-y-0 left-0 flex items-center">
+            {/* rotating word — centered on mobile, left-aligned on md+ */}
+            <span className="absolute inset-0 md:inset-y-0 md:left-0 flex items-center justify-center md:justify-start w-full">
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.span
                   key={idx}
