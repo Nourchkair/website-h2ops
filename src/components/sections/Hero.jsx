@@ -7,7 +7,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { SplineScene } from "../ui/splite";
 
 const ROTATING = ["Trades", "Brokerages", "B2B"];
-const ROTATE_MS = 3000; // slow rotation
+const ROTATE_MS = 2000; // slow rotation
 
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion();
