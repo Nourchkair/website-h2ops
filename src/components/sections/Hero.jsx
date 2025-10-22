@@ -1,6 +1,7 @@
 // src/components/sections/Hero.jsx
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ButtonColorful } from "@/components/ui/button-colorful";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
@@ -101,19 +102,17 @@ export default function Hero() {
           animate={{ opacity: ready ? 1 : 0, y: ready ? 0 : (prefersReducedMotion ? 0 : 16) }}
           transition={{ delay: DELAY + 0.6, duration: prefersReducedMotion ? 0.2 : 0.7, ease: "easeOut" }}
         >
-          <a
-            href="https://calendar.app.google/R6XMd5ipbBTu3LXL8"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/contact"
             className="hover:scale-[1.03] active:scale-[0.99] transition-transform touch-manipulation"
             style={{ minHeight: "44px", minWidth: "44px" }}
           >
             <ButtonColorful
-              label="Let’s talk"
+              label="Let's talk"
               variant="blue"
               className="font-semibold text-sm sm:text-base px-6"
             />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
