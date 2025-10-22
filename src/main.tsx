@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import App from './App.tsx';
 import CaseDetail from './pages/CaseDetail.tsx'; // ← NEW
+import Contact from "./pages/Contact.jsx";
 import './index.css';
 
 const navCards = [
