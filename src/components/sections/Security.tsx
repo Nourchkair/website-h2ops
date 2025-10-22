@@ -10,7 +10,7 @@ export function Security() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8">
         <SectionTitle
           title="Security = Success"
-          subtitle="Safeguards to keep your automation safe, compliant, and resilient"
+          subtitle="Safeguards to keep your Automations safe, compliant, and resilient"
           className="mb-12 text-center"            // ⬅️ center the heading block
         />
 
