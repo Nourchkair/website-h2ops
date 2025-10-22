@@ -65,7 +65,7 @@ export default function Hero() {
           <span className="opacity-90"> Automatically.</span>
         </motion.h1>
 
-        {/* Subhead with rotating term (left-aligned within fixed width) */}
+        {/* Subhead with rotating term (centered on mobile, left-aligned on desktop) */}
         <motion.p
           className="mt-3 sm:mt-4 text-base xs:text-lg sm:text-xl md:text-2xl text-white/85 leading-relaxed"
           initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 8 }}
@@ -78,8 +78,8 @@ export default function Hero() {
             <span className="invisible block text-xl sm:text-2xl md:text-3xl font-semibold px-2">
               Brokerages
             </span>
-            {/* rotating, left-aligned word */}
-            <span className="absolute inset-y-0 left-0 flex items-center">
+            {/* rotating word - centered on mobile (left-1/2 translate-x-1/2), left-aligned on larger screens */}
+            <span className="absolute inset-y-0 left-1/2 -translate-x-1/2 sm:left-0 sm:translate-x-0 flex items-center">
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.span
                   key={idx}
