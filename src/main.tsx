@@ -4,8 +4,10 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import App from './App.tsx';
-import CaseDetail from './pages/CaseDetail.tsx'; // ← NEW
+import CaseDetail from './pages/CaseDetail.tsx';
 import Contact from "./pages/Contact.jsx";
+import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
+import TermsOfUse from './pages/TermsOfUse.tsx';
 import './index.css';
 
 const navCards = [
@@ -48,6 +50,8 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<App />} />
         <Route path="/case/:slug" element={<CaseDetail />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-use" element={<TermsOfUse />} />
       </Routes>
     </Router>
   </StrictMode>

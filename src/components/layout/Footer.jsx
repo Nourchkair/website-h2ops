@@ -61,7 +61,7 @@ export function Footer() {
             <div className="flex flex-wrap items-center gap-4 sm:gap-6">
               <button
                 type="button"
-                onClick={() => window.open('/H2Ops Privacy Policy.pdf', '_blank')}
+                onClick={() => navigate('/privacy-policy')}
                 className="cursor-pointer text-white/60 hover:text-white transition-colors text-xs sm:text-sm min-h-[44px] flex items-center touch-manipulation"
                 aria-label="Privacy Policy"
               >
@@ -70,11 +70,11 @@ export function Footer() {
               <span className="hidden sm:inline text-white/30">•</span>
               <button
                 type="button"
-                onClick={() => {}}
-                className="cursor-default text-white/60 hover:text-white transition-colors text-xs sm:text-sm min-h-[44px] flex items-center touch-manipulation"
-                aria-label="Terms of Service (disabled)"
+                onClick={() => navigate('/terms-of-use')}
+                className="cursor-pointer text-white/60 hover:text-white transition-colors text-xs sm:text-sm min-h-[44px] flex items-center touch-manipulation"
+                aria-label="Terms of Use"
               >
-                Terms of Service
+                Terms of Use
               </button>
             </div>
 
