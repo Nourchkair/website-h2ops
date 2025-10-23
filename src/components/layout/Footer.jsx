@@ -61,9 +61,9 @@ export function Footer() {
             <div className="flex flex-wrap items-center gap-4 sm:gap-6">
               <button
                 type="button"
-                onClick={() => {}}
-                className="cursor-default text-white/60 hover:text-white transition-colors text-xs sm:text-sm min-h-[44px] flex items-center touch-manipulation"
-                aria-label="Privacy Policy (disabled)"
+                onClick={() => window.open('/H2Ops Privacy Policy.pdf', '_blank')}
+                className="cursor-pointer text-white/60 hover:text-white transition-colors text-xs sm:text-sm min-h-[44px] flex items-center touch-manipulation"
+                aria-label="Privacy Policy"
               >
                 Privacy Policy
               </button>
