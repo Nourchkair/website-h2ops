@@ -99,8 +99,8 @@ function App() {
           <WhyUs />
         </section>
 
-        {/* Real Outcomes */}
-        <RealOutcomes />
+        {/* Real Outcomes - Hidden but code preserved */}
+        {/* <RealOutcomes /> */}
 
         <div id="services">
           <section
