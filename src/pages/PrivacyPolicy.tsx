@@ -62,6 +62,9 @@ export default function PrivacyPolicy() {
                   <p className="text-white/80 leading-relaxed">
                     H2Ops designates a Privacy Officer responsible for compliance with this policy and PIPEDA. Contact: <a href="mailto:privacy@horizon2operations.com" className="text-sky-400 hover:text-sky-300 underline">privacy@horizon2operations.com</a>.
                   </p>
+                  <p className="text-white/80 leading-relaxed mt-4">
+                    Postal address: PO BOX 99900 PY 319 961, RPO FALLOWFIELD, NEPEAN ON K2J 5M9
+                  </p>
                 </section>
 
                 <section>
@@ -239,6 +242,25 @@ export default function PrivacyPolicy() {
                   <p className="text-white/80 leading-relaxed">
                     We may update this policy to reflect changes to laws, services, or operations. We will post updates with a new "Last updated" date. Material changes may be communicated by email or prominent notice on the Site.
                   </p>
+                </section>
+
+                <section>
+                  <h2 className="text-2xl font-semibold text-white mb-4">16) Contact</h2>
+                  <p className="text-white/80 leading-relaxed mb-2">
+                    Privacy Officer: <a href="mailto:privacy@horizon2operations.com" className="text-sky-400 hover:text-sky-300 underline">privacy@horizon2operations.com</a>
+                  </p>
+                  <p className="text-white/80 leading-relaxed mb-1">Postal address:</p>
+                  <p className="text-white/80 leading-relaxed mb-1">PO BOX 99900 PY 319 961</p>
+                  <p className="text-white/80 leading-relaxed mb-1">RPO FALLOWFIELD</p>
+                  <p className="text-white/80 leading-relaxed">NEPEAN ON K2J 5M9</p>
+                </section>
+
+                <section>
+                  <h2 className="text-2xl font-semibold text-white mb-4">Annex A: Roles recap</h2>
+                  <ul className="list-disc pl-6 space-y-2 text-white/80">
+                    <li><strong>Controller:</strong> H2Ops for the Site and our own business records.</li>
+                    <li><strong>Processor or Service provider:</strong> H2Ops for client supplied data within contracted automations and CRMs, governed by your DPA where applicable.</li>
+                  </ul>
                 </section>
               </div>
 
