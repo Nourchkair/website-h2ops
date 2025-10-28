@@ -60,7 +60,7 @@ export default function PrivacyPolicy() {
 
                   <h3 className="text-xl font-semibold text-white mt-6 mb-3">Privacy Officer</h3>
                   <p className="text-white/80 leading-relaxed">
-                    H2Ops designates a Privacy Officer responsible for compliance with this policy and PIPEDA. Contact: <a href="mailto:sammi@horizon2operations.com" className="text-sky-400 hover:text-sky-300 underline">sammi@horizon2operations.com</a>.
+                    H2Ops designates a Privacy Officer responsible for compliance with this policy and PIPEDA. Contact: <a href="mailto:privacy@horizon2operations.com" className="text-sky-400 hover:text-sky-300 underline">privacy@horizon2operations.com</a>.
                   </p>
                 </section>
 
