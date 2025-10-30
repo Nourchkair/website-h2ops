@@ -24,7 +24,7 @@ export default function Contact() {
     };
 
     try {
-      const response = await fetch('https://h2ops.app.n8n.cloud/webhook-test/form-h2ops-website', {
+      const response = await fetch('https://h2ops.app.n8n.cloud/webhook/form-h2ops-website', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
